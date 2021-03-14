@@ -11,9 +11,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 WORKDIR /usr/share/nginx/html
 RUN composer install --no-dev
 
-# Setup Laravel App Key
-RUN /usr/bin/php artisan key:generate
-
 # Add Nginx config
 COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 ADD nginx/nginx.conf /etc/nginx/nginx.conf
