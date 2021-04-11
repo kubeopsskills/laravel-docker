@@ -13,7 +13,7 @@ RUN composer install --no-dev
 
 # Add Nginx config
 COPY nginx/default.conf /etc/nginx/conf.d/default.conf
-ADD nginx/nginx.conf /etc/nginx/nginx.conf
+COPY nginx/nginx.conf /etc/nginx/nginx.conf
 
 # Add PHP-FPM config
 COPY php-fpm/www.conf /etc/php/8.0/fpm/pool.d/www.conf
